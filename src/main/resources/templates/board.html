@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<h1 th:text="${board.title}">Hoge Board</h1>
+<ul th:each="message: ${board.messages}">
+    <li th:text="${message.body}">message</li>
+    <li th:remove="all">message</li>
+    <li th:remove="all">message</li>
+    <li th:remove="all">message</li>
+    <li th:remove="all">message</li>
+</ul>
+
+<form action="/board" th:action="${board.id}" method="POST">
+    <input name="message" type="text" maxlength="250"/>
+    <input type="submit"/>
+</form>
+</body>
+</html>
